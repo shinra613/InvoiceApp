@@ -19,6 +19,13 @@ const Customer = sequelize.define('Customer', {
   
 
   });
+
+  Customer.associate = (models) => {
+    Customer.hasMany(models.Invoice, {
+      foreignKey: 'customerId',
+      as: 'invoices'
+    });
+  };
   
   (async () => {
     await sequelize.sync({ force: true });

@@ -3,6 +3,9 @@ const bodyParser = require('body-parser');
 const invoiceRoutes = require('./routes/invoiceRoutes');
 const customerRoutes = require('./routes/customerRoutes');
 const logger = require('./middlewares/logger');
+
+require('./setup');
+
 const app = express();
 
 app.use(bodyParser.json());
